@@ -7,7 +7,7 @@ typedef struct {
   int i;
   int out;
   int (*p)(int);
-} Task;
+} Task, *Task_Point;
 
 int myfun(int data)
 {
@@ -66,7 +66,8 @@ int main(int argc, char* args[])
 
   Task *ptask = &t;
   m = ptask->p(30);
-  printf("--- %d \n", m);
+  Task_Point ptt = &t;
+  printf("--- %d, pt->i =%d \n", m, ptt->i);
   getchar();
   return 0;
 }

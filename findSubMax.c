@@ -1,7 +1,14 @@
 #include <stdio.h>
 
-int main(int argc, char const *argv[], char const *evnp[])
+int main(int argc, char const *argv[], char** envp)
 {
+    char** env;
+    for (env = envp; *env != 0; env++)
+    {
+        char* thisEnv = *env;
+        printf("%s\n", thisEnv);
+    }
+
     int array[] = {20, 40, 32, 12, 42, 59, 100, 300, 10, 500};
     int m1, m2;
     if (*array > *(array + 1))
