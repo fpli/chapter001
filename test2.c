@@ -1,22 +1,22 @@
 #include <stdio.h>
-int a;
+#include <unistd.h>
 
-int b;
-int b = 50;
+#include <stdlib.h>
 
-void f();
+extern char **environ; // from unistd.h
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
-    /* code */
-    f();
-    int i ;
-    i = 50;
-    
-    const volatile int local = 10;
-    int* ptr = (int*)&local;
-    printf("Initial value of local : %d \n", local);
-    *ptr = 100;
-    printf("Modified value of local: %d \n", local);
+    char **p = environ;
+    while (*p != NULL)
+    {
+        printf("%s (%p)\n", *p, *p);
+        *p++;
+    }
+
+    printf("------- \n");
+    char *pathvar;
+    pathvar = getenv("PATH"); // getenv from stdlib.h
+    printf("pathvar=%s",pathvar);
     return 0;
 }
