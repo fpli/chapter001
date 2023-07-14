@@ -48,8 +48,7 @@ int main(int argc, char const *argv[])
     struct person write_struct = {1, "Rohan", "Sharma"};
 
     // writing to file
-    fwrite(&write_struct, sizeof(write_struct), 1,
-           infile);
+    fwrite(&write_struct, sizeof(write_struct), 1, infile);
 
     struct person read_struct;
 
@@ -59,8 +58,7 @@ int main(int argc, char const *argv[])
     // reading to read_struct
     fread(&read_struct, sizeof(read_struct), 1, infile);
 
-    printf("Name: %s %s \nID: %d", read_struct.fname,
-           read_struct.lname, read_struct.id);
+    printf("Name: %s %s \nID: %d", read_struct.fname, read_struct.lname, read_struct.id);
 
     // close file
     fclose(infile);

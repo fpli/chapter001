@@ -13,21 +13,22 @@ int main()
     val = setjmp(env_buffer);
     if (val != 0)
     {
-        printf("从 longjmp() 返回值 = %d\n", val);
-        exit(0);
+        printf("the return value from longjmp() = %d\n", val);
+        //exit(0);
     } else {
         printf("++++++++++++++\n");
+        printf("will longjmp \n");
+        jmpfunction(env_buffer);
     }
-    printf("跳转函数调用\n");
-    jmpfunction(env_buffer);
-
-    printf("---******------\n");
+    
+    printf("----------******--------\n");
     return (0);
 }
 
 void jmpfunction(jmp_buf env_buf)
 {
     longjmp(env_buf, 1);
-    printf("---------\n");
-    longjmp(env_buf, 2);
+    // dead code 
+    // printf("---------\n");
+    //longjmp(env_buf, 2);
 }

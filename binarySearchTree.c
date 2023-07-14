@@ -1,6 +1,4 @@
-// C program to demonstrate insert
-// operation in binary
-// search tree.
+// C program to demonstrate insert operation in a binary search tree.
 #include <stdio.h>
 #include <stdlib.h>
 

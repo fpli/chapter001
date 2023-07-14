@@ -58,11 +58,26 @@ void test02()
     Person<string, int> p("Amy", 30);
     printPerson2(p);
 }
+ 
+class Box
+{
+   public:
+      Box() { 
+         cout << "invoke constructor function." <<endl;
+      }
+      ~Box() { 
+         cout << "invoke destroy function." <<endl;
+      }
+};
 
 int main(int argc, char const *argv[])
 {
     test01();
     test02();
+
+    Box* myBoxArray = new Box[4];
+ 
+    delete [] myBoxArray; // 删除数组
 
     return 0;
 }
