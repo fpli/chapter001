@@ -5,11 +5,11 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
-#include <sys/ioctl.h>
+#include <x86_64-linux-gnu/sys/ioctl.h>
 #include <errno.h>
 #include <linux/videodev2.h>
-#include <sys/mman.h>
-#include <sys/time.h>
+#include <x86_64-linux-gnu/sys/mman.h>
+#include <x86_64-linux-gnu/sys/time.h>
 
 #define TRUE (1)
 #define FALSE (0)
