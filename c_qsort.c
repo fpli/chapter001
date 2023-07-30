@@ -26,5 +26,12 @@ int main()
       printf("%d ", values[n]);
    }
 
+   int a[7] = {20, 30, 10, 4, 5, 2, 0};
+   qsort(a, sizeof(a) / sizeof(int), sizeof(int), cmpfunc);
+   printf("\nAfter sorting the list is: \n");
+   for (n = 0; n < 7; n++)
+   {
+      printf("%d ", a[n]);
+   }
    return (0);
 }
