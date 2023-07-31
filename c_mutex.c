@@ -26,7 +26,8 @@ int main(int argc, char const *argv[])
     pthread_t tid;
     pthread_create(&tid, NULL, tfn, NULL);
     srand(time(NULL));
-    while(1){
+    while (1)
+    {
         pthread_mutex_lock(&mutex);
         printf("HELLO ");
         sleep(rand() % 3);
