@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <signal.h>
 
-void sighandler(int);
+void signalhandler(int);
 
 int main () {
-   signal(SIGINT, sighandler);
+   signal(SIGINT, signalhandler);
 
    while(1) {
       printf("Going to sleep for a second...\n");
@@ -15,7 +15,7 @@ int main () {
    return(0);
 }
 
-void sighandler(int signum) {
-   printf("Caught signal %d, coming out...\n", signum);
+void signalhandler(int signalnum) {
+   printf("Caught signal %d, coming out...\n", signalnum);
    exit(1);
 }
