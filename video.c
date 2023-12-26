@@ -7,15 +7,15 @@
 #include <unistd.h>
 #include <errno.h>
 #include <malloc.h>
-#include <x86_64-linux-gnu/sys/stat.h>
-#include <x86_64-linux-gnu/sys/time.h>
-#include <x86_64-linux-gnu/sys/mman.h>
-#include <x86_64-linux-gnu/sys/ioctl.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/mman.h>
+#include <sys/ioctl.h>
 #include <signal.h>
 #include <linux/videodev2.h>
 #include <asm/types.h>
 #include <pthread.h>
-#include <x86_64-linux-gnu/sys/socket.h>
+#include <sys/socket.h>
 #include <netinet/in.h>
 #include <netinet/ip.h>
 
