@@ -13,7 +13,6 @@ EXECUTABLE_OUTPUT_PATH: 可执行文件的输出目录。
 LIBRARY_OUTPUT_PATH: 库文件的输出目录。
 PROJECT_NAME: 工程名，使用project命令定义。
 CMAKE_BINARY_DIR: 执行cmake命令的目录，一般是工程的根目录下的build目录。
-CMAKE_SOURCE_DIR: 工程的根目录。
 ]]
 # include directory
 include_directories(${PROJECT_SOURCE_DIR}/include)
