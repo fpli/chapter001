@@ -3,7 +3,8 @@
 
 typedef int (*pfun)(int);
 
-typedef struct {
+typedef struct
+{
   int i;
   int out;
   int (*p)(int);
@@ -14,31 +15,56 @@ int myfun(int data)
   return data * 10;
 }
 
-pfun gf(){
+pfun gf()
+{
   return myfun;
 }
 
-void f1(int a, char * b, char *c){
+void f1(int a, char *b, char *c)
+{
   printf("a = %d, b = %s, c = %s\n", a, b, c);
 }
 
-int a(){
+int a()
+{
   printf("---a-----------\n");
   return 0;
 }
 
-char* b(){
+char *b()
+{
   printf("-----b--------\n");
   return "b";
 }
 
-char* c(){
+char *c()
+{
   printf("-----c--------\n");
   return "c";
 }
 
-int main(int argc, char* args[])
+static long facttail(long n, int a)
 {
+  if (n < 0 || n == 0 || n == 1)
+  {
+    return a;
+  }
+  else
+  {
+    return facttail(n - 1, a * n);
+  }
+}
+
+long factorial(long n)
+{
+  return facttail(n, 1);
+}
+
+int main(int argc, char *args[])
+{
+  long ret = factorial(5L);
+  printf("ret = %ld", ret);
+
   char *str1 = "abc";
   char str2[] = "abc";
   printf("str1: %p, str2: %p \n", str1, str2);
@@ -61,8 +87,7 @@ int main(int argc, char* args[])
   printf("*pt = %d \n", *pt);
 
   Task t = {
-    1, 2, myfun
-  };
+      1, 2, myfun};
 
   Task *ptask = &t;
   m = ptask->p(30);
@@ -71,3 +96,4 @@ int main(int argc, char* args[])
   getchar();
   return 0;
 }
+

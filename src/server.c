@@ -19,7 +19,11 @@ int main()
     struct sockaddr_in address;
     bzero(&address, sizeof(address));
     address.sin_family = AF_INET;
-    inet_pton(AF_INET, ip, &address.sin_addr);
+
+    //inet_pton(AF_INET, ip, &address.sin_addr);
+
+    address.sin_addr.s_addr = htonl(INADDR_ANY);
+    
     address.sin_port = htons(port);
 
     int ret = bind(sockfd, (struct sockaddr *)&address, sizeof(address));

@@ -5,12 +5,18 @@
 
 pthread_mutex_t mutex;
 
+void print_pid_tid()
+{
+    printf("pid = %d, tid = %lu \n", getpid(), pthread_self());
+}
+
 void *tfn(void *arg)
 {
     srand(time(NULL));
     while (1)
     {
         pthread_mutex_lock(&mutex);
+        print_pid_tid();
         printf("hello ");
         sleep(rand() % 3);
         printf("world\n");
@@ -19,6 +25,7 @@ void *tfn(void *arg)
     }
     return NULL;
 }
+
 
 int main(int argc, char const *argv[])
 {
@@ -29,6 +36,7 @@ int main(int argc, char const *argv[])
     while (1)
     {
         pthread_mutex_lock(&mutex);
+        print_pid_tid();
         printf("HELLO ");
         sleep(rand() % 3);
         printf("WORLD\n");
