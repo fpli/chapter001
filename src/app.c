@@ -60,6 +60,29 @@ long factorial(long n)
   return facttail(n, 1);
 }
 
+long f(int n)
+{
+  if (n == 1)
+  {
+    return 10L;
+  }
+  else
+  {
+    return f(n-1) * 2 + 6;
+  }
+}
+
+long ff(int n)
+{
+  long a = 10;
+  for (int i = 0; i < n; i++)
+  {
+    /* code */
+    a = (a + 3) * 2;
+  }
+  return a;
+}
+
 int main(int argc, char *args[])
 {
   long ret = factorial(5L);
