@@ -1,8 +1,12 @@
 # https://subingwen.cn/cmake/CMake-primer/index.html
 # line comment
-c_make_minimum_required(VERSION 3.5)
+
+cmake_minimum_required(VERSION 3.31.6)
+
+# project(chapter02)
+
 # project name
-c_project(chapter02 VERSION 1.0.0 LANGUAGES CXX)
+project(chapter02 LANGUAGES CXX)
 
 #[[ multiple line comment
 PROJECT_SOURCE_DIR宏对应的值就是我们在使用cmake命令时，后面紧跟的目录，一般是工程的根目录。
@@ -40,7 +44,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 link_directories("${PROJECT_SOURCE_DIR}/lib")
 
 # add executable(target name source file list, separate by space or simecolon)
-add_executable(app main.cpp)
+add_executable(app "${PROJECT_SOURCE_DIR}/src/main.cpp")
 
 # add library(target name library type source file list)
 target_link_libraries(app pthread)
