@@ -26,7 +26,7 @@ int main()
 
     char data[] = "www.daemoncoder.com";
     send(sockfd, data, strlen(data), 0);
-
+    while(1);
     close(sockfd);
     return 0;
 }
