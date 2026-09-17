@@ -37,7 +37,7 @@ void readFile(const char *filename)
     {
         /* code */
         printf("%s", buffer);
-        memset(buffer, 0, 1024);
+        memset(buffer, 0, 4096);
     }
 
     if (NULL != f)
