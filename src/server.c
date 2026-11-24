@@ -61,8 +61,11 @@ int main()
             char client_ip[INET_ADDRSTRLEN];
             printf("connected with %s:%d\n", inet_ntop(AF_INET, &client.sin_addr, client_ip, INET_ADDRSTRLEN), ntohs(client.sin_port));
             char buffer[1024];
-            recv(connfd, buffer, sizeof(buffer), 0);
+            int n =recv(connfd, buffer, sizeof(buffer), 0);
             printf("receive data:%s\n", buffer);
+            char buf[200];
+            int m = read(connfd, buf, sizeof(buf));
+            printf("read data:m=%d, content=%s\n", m, buf);
         }
     }
 
